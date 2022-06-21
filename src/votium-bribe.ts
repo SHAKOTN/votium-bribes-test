@@ -1,7 +1,7 @@
 import { Bribed } from "../generated/VotiumBribe/VotiumBribe"
 import { Bribe } from "../generated/schema"
 
-export function handleDepositBribe(event: Bribed): void {
+export function handleBribed(event: Bribed): void {
   const bribe = new Bribe(event.transaction.hash);
 
   bribe.proposal = event.params._proposal;
