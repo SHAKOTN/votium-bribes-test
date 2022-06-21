@@ -14,31 +14,10 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - Bribed
-        - Initiated
-        - ModifiedTeam
-        - OwnershipTransferred
-        - UpdatedDistributor
-        - UpdatedFee
-        - WhitelistRequirement
-        - Whitelisted
       abis:
         - name: VotiumBribe
           file: ./abis/VotiumBribe.json
       eventHandlers:
         - event: Bribed(address,uint256,indexed bytes32,uint256)
           handler: handleBribed
-        - event: Initiated(bytes32)
-          handler: handleInitiated
-        - event: ModifiedTeam(address,bool)
-          handler: handleModifiedTeam
-        - event: OwnershipTransferred(indexed address,indexed address)
-          handler: handleOwnershipTransferred
-        - event: UpdatedDistributor(indexed address,address)
-          handler: handleUpdatedDistributor
-        - event: UpdatedFee(uint256)
-          handler: handleUpdatedFee
-        - event: WhitelistRequirement(bool)
-          handler: handleWhitelistRequirement
-        - event: Whitelisted(address)
-          handler: handleWhitelisted
       file: ./src/votium-bribe.ts
